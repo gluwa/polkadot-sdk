@@ -2800,7 +2800,7 @@ impl<T: Config> Pallet<T> {
 			u256(current_balance)
 				.saturating_mul(u256(points))
 				// We check for zero above
-				.div(current_points),
+				.div(u256(current_points)),
 		)
 	}
 
