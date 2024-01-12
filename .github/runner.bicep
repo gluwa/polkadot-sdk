@@ -710,8 +710,8 @@ param location string = resourceGroup().location
   'Standard_ND96asr_v4'
   'Standard_ND40s_v3'
 ])
-// $0.252/hr in West US 3; 4 vCPU, 32 GiB RAM, Memory optimized
-param vmSize string = 'Standard_E4as_v4'
+// $0.56/hr in West US 3; 4 vCPU, 64 GiB RAM, Memory optimized
+param vmSize string = 'Standard_E8-4as_v4'
 
 @description('Name of the VNET')
 param virtualNetworkName string = '${vmName}-vNet'
@@ -836,6 +836,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
     }
     storageProfile: {
       osDisk: {
+        diskSizeGB: 512
         createOption: 'FromImage'
         deleteOption: 'Delete'
         managedDisk: {
