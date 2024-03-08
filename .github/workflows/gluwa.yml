@@ -108,7 +108,7 @@ jobs:
         run: |
           # use the version defined in gluwa/creditcoin3
           RUSTC_VERSION=$(curl --silent https://raw.githubusercontent.com/gluwa/creditcoin3/dev/rust-toolchain.toml | grep channel | tail -n1 | tr -d " " | cut -f2 -d'"')
-          echo "RUSTC_VERSION=$RUSTC_VERSION" >> "$GITHUB_ENV"
+          echo "RUSTC_VERSION=1.77.0" >> "$GITHUB_ENV"
 
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
@@ -141,7 +141,7 @@ jobs:
         run: |
           # use the version defined in gluwa/creditcoin3
           RUSTC_VERSION=$(curl --silent https://raw.githubusercontent.com/gluwa/creditcoin3/dev/rust-toolchain.toml | grep channel | tail -n1 | tr -d " " | cut -f2 -d'"')
-          echo "RUSTC_VERSION=$RUSTC_VERSION" >> "$GITHUB_ENV"
+          echo "RUSTC_VERSION=1.77.0" >> "$GITHUB_ENV"
 
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
