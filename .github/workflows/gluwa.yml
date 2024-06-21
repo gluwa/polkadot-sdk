@@ -143,6 +143,10 @@ jobs:
           RUSTC_VERSION=$(curl --silent https://raw.githubusercontent.com/gluwa/creditcoin3/dev/rust-toolchain.toml | grep channel | tail -n1 | tr -d " " | cut -f2 -d'"')
           echo "RUSTC_VERSION=$RUSTC_VERSION" >> "$GITHUB_ENV"
 
+      - name: DEBUG
+        run: |
+          df -h
+
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
         with:
@@ -157,6 +161,11 @@ jobs:
         with:
           command: test
           args: --features runtime-benchmarks
+
+      - name: DEBUG
+        if: always()
+        run: |
+          df -h
 
   remove-github-runner:
     runs-on: ubuntu-latest
