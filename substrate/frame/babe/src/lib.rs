@@ -275,7 +275,7 @@ pub mod pallet {
 	/// It is set in `on_finalize`, before it will contain the value from the last block.
 	#[pallet::storage]
 	#[pallet::getter(fn author_vrf_randomness)]
-	pub(super) type AuthorVrfRandomness<T> = StorageValue<_, Option<BabeRandomness>, ValueQuery>;
+	pub type AuthorVrfRandomness<T> = StorageValue<_, Option<BabeRandomness>, ValueQuery>;
 
 	/// The block numbers when the last and current epoch have started, respectively `N-1` and
 	/// `N`.
