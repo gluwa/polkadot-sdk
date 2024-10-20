@@ -666,6 +666,8 @@ pub mod pallet {
 		EraPaid { era_index: EraIndex, validator_payout: BalanceOf<T>, remainder: BalanceOf<T> },
 		/// The nominator has been rewarded by this amount.
 		Rewarded { stash: T::AccountId, amount: BalanceOf<T> },
+
+		RewardedNum { stash: T::AccountId, num: u32 },
 		/// A staker (validator or nominator) has been slashed by the given amount.
 		Slashed { staker: T::AccountId, amount: BalanceOf<T> },
 		/// A slash for the given validator, for the given percentage of their stake, at the given

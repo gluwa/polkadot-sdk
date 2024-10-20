@@ -271,6 +271,9 @@ impl<T: Config> Pallet<T> {
 
 		T::Reward::on_unbalanced(total_imbalance);
 		debug_assert!(nominator_payout_count <= T::MaxNominatorRewardedPerValidator::get());
+		let e =
+					Event::<T>::RewardedNum { stash: validator_stash.clone(), num: nominator_payout_count };
+		Self::deposit_event(e);
 		Ok(Some(T::WeightInfo::payout_stakers_alive_staked(nominator_payout_count)).into())
 	}
 
