@@ -459,6 +459,17 @@ pub mod pallet {
 			);
 		}
 	}
+
+	#[pallet::call]
+	impl<T: Config> Pallet<T> {
+		#[pallet::call_index(0)]
+		#[pallet::weight({0})]
+		pub fn set_next_fee_multiplier(origin: OriginFor<T>, next_fee_multiplier: Multiplier) -> DispatchResult {
+			ensure_root(origin)?;
+			NextFeeMultiplier::<T>::put(next_fee_multiplier);
+			Ok(())
+		}
+	}
 }
 
 impl<T: Config> Pallet<T> {
