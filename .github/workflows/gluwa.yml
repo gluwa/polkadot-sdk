@@ -16,8 +16,8 @@ permissions: read-all
 env:
   RUNNER_VM_NAME: "${{ github.event.repository.name }}-$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
   LINODE_REGION: "nl-ams"
-  # High Memory, Linode 90 GB, 4 vCPU, disk: 90 GB, 0.36 $/hr
-  LINODE_VM_SIZE: "g7-highmem-4"
+  # Shared CPU, Linode 64 GB, 16 vCPU, disk: 1280 GB, 0.576 $/hr
+  LINODE_VM_SIZE: "g6-standard-16"
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
