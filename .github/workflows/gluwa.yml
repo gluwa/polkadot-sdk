@@ -156,7 +156,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: test
-          args: --features runtime-benchmarks
+          args: --release --features runtime-benchmarks
 
   remove-github-runner:
     runs-on: ubuntu-latest
