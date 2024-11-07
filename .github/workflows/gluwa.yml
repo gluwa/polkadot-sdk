@@ -140,7 +140,7 @@ jobs:
         uses: gluwa/cargo@dev
         with:
           command: test
-          args: --features runtime-benchmarks
+          args: --features runtime-benchmarks --lib
 
   rm-gh-runner-cargo-check:
     runs-on: ubuntu-latest
